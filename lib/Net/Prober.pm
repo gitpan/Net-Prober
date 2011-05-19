@@ -2,7 +2,7 @@
 
 package Net::Prober;
 BEGIN {
-  $Net::Prober::VERSION = '0.01';
+  $Net::Prober::VERSION = '0.02';
 }
 
 
@@ -46,7 +46,7 @@ sub probe_icmp {
     $pinger->close();
 
     my $result = {
-        ok => $ok,
+        ok => $ok ? 1 : 0,
         time => $elapsed,
         ip => $ip,
     };
@@ -107,7 +107,7 @@ sub probe_http {
     }
 
     return {
-        ok      => $good,
+        ok      => $good ? 1 : 0,
         status  => $resp->status_line,
         time    => $elapsed,
         content => $content,
@@ -153,7 +153,7 @@ sub probe_tcp {
     my $elapsed = Time::HiRes::tv_interval($t0);
 
     my $result = {
-        ok => $good,
+        ok   => $good ? 1 : 0,
         time => $elapsed,
         host => $host,
         port => $port,
@@ -220,7 +220,7 @@ Net::Prober - Probes network hosts for downtime, latency, etc...
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
