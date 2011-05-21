@@ -2,7 +2,7 @@
 
 package Net::Prober;
 BEGIN {
-  $Net::Prober::VERSION = '0.02';
+  $Net::Prober::VERSION = '0.03';
 }
 
 
@@ -74,7 +74,7 @@ sub probe_http {
         $port ||= 443;
     }
 
-    $url //= '/';
+    $url = '/' unless defined $url;
     $url =~ s{^/+}{};
 
     my $scheme = $port == 443 ? "https" : "http";
@@ -126,7 +126,7 @@ sub probe_tcp {
     if (! defined $port or $port == 0) {
         Carp::croak("Can't probe: undefined port");
     }
-    $timeout //= 1.0;
+    $timeout ||= 1.0;
 
     my $t0 = [ Time::HiRes::gettimeofday() ];
 
@@ -175,7 +175,7 @@ sub probe {
         Carp::croak("Can't probe undefined host\n");
     }
 
-    my $proto = lc($probe_type->{proto} // 'tcp');
+    my $proto = lc($probe_type->{proto} || 'tcp');
     my $port  = $probe_type->{port};
 
     # Resolve port names (http => 80)
@@ -185,8 +185,8 @@ sub probe {
         host     => $host,
         port     => $port,
         proto    => $proto,
-        url      => $probe_type->{url} // '/',
-        timeout  => $probe_type->{timeout} // 1.0,
+        url      => $probe_type->{url} || '/',
+        timeout  => $probe_type->{timeout} || 1.0,
         md5      => $probe_type->{md5},
         match    => $probe_type->{match},
     };
@@ -220,7 +220,7 @@ Net::Prober - Probes network hosts for downtime, latency, etc...
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

@@ -30,7 +30,7 @@ my %WriteMakefileArgs = (
     'LWPx::ParanoidAgent' => '0',
     'Net::Ping' => '0'
   },
-  'VERSION' => '0.02',
+  'VERSION' => '0.03',
   'test' => {
     'TESTS' => 't/*.t'
   }
