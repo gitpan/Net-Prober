@@ -2,7 +2,7 @@
 
 package Net::Prober;
 BEGIN {
-  $Net::Prober::VERSION = '0.03';
+  $Net::Prober::VERSION = '0.04';
 }
 
 
@@ -220,7 +220,7 @@ Net::Prober - Probes network hosts for downtime, latency, etc...
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
