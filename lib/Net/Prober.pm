@@ -2,7 +2,7 @@
 
 package Net::Prober;
 BEGIN {
-  $Net::Prober::VERSION = '0.04';
+  $Net::Prober::VERSION = '0.05';
 }
 
 
@@ -220,7 +220,7 @@ Net::Prober - Probes network hosts for downtime, latency, etc...
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -380,7 +380,7 @@ Returns the results as hashref. Example:
         timeout => 0.5,
     });
 
-You will get *at least* these keys:
+You will get B<at least> these keys:
 
     $result = {
         ok => 1,
@@ -412,7 +412,7 @@ Example:
 =item C<md5>
 
 Checks if the whole content of the response matches a given
-MD5 hash. You can calculate the MD5 of a given URL with:
+MD5 hash. B<You can calculate the MD5 of a given URL with>:
 
     wget -q -O - http://your.url.here | md5sum
 
@@ -421,6 +421,20 @@ MD5 hash. You can calculate the MD5 of a given URL with:
 What URL to download. By default it uses C</>.
 
 =back
+
+=head3 C<icmp> probe
+
+Uses L<Net::Ping> to perform C<ICMP> probes, that is,
+to send a ping packet to the given host and port.
+
+C<size> of ping packets is not currently supported.
+
+C<proto> is an additional key that allows to specify
+whether the pings should be sent via UDP or TCP. Remember
+that to send ICMP UDP packets you need root privileges.
+
+B<The ICMP probe code will automatically switch to TCP if the
+necessary privileges are not available>.
 
 =head1 AUTHOR
 
