@@ -4,7 +4,7 @@
       "Cosimo Streppone <cosimo@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200000, CPAN::Meta::Converter version 2.102400",
+   "generated_by" : "Dist::Zilla version 4.300005, CPAN::Meta::Converter version 2.102400",
    "license" : [
       "perl_5"
    ],
@@ -16,7 +16,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.31"
+            "ExtUtils::MakeMaker" : "6.30"
          }
       },
       "runtime" : {
@@ -25,8 +25,11 @@
             "Data::Dumper" : 0,
             "Digest::MD5" : 0,
             "IO::Socket::INET" : 0,
+            "IO::Socket::SSL" : 0,
+            "IO::Socket::UNIX" : 0,
             "LWPx::ParanoidAgent" : 0,
-            "Net::Ping" : 0
+            "Net::Ping" : "2.34",
+            "Sys::Syslog" : 0
          }
       },
       "test" : {
@@ -48,6 +51,6 @@
          "web" : "http://github.com/cosimo/perl5-net-prober"
       }
    },
-   "version" : "0.05"
+   "version" : "0.06"
 }
 
