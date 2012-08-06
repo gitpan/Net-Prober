@@ -1,6 +1,6 @@
 package Net::Prober::tcp;
 {
-  $Net::Prober::tcp::VERSION = '0.06';
+  $Net::Prober::tcp::VERSION = '0.07';
 }
 
 use strict;
@@ -70,7 +70,7 @@ Net::Prober::tcp
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 AUTHOR
 

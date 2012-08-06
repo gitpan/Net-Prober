@@ -8,7 +8,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300005, CPAN::Meta::Converter version 2.102400'
+generated_by: 'Dist::Zilla version 4.300005, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -24,7 +24,8 @@ requires:
   LWPx::ParanoidAgent: 0
   Net::Ping: 2.34
   Sys::Syslog: 0
+  perl: 5.010
 resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Net-Prober
   repository: git://github.com/cosimo/perl5-net-prober.git
-version: 0.06
+version: 0.07

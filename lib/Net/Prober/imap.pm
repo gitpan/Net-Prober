@@ -1,6 +1,6 @@
 package Net::Prober::imap;
 {
-  $Net::Prober::imap::VERSION = '0.06';
+  $Net::Prober::imap::VERSION = '0.07';
 }
 
 use strict;
@@ -100,7 +100,7 @@ Net::Prober::imap
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 AUTHOR
 
