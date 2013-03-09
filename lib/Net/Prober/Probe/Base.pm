@@ -1,6 +1,6 @@
 package Net::Prober::Probe::Base;
 {
-  $Net::Prober::Probe::Base::VERSION = '0.07';
+  $Net::Prober::Probe::Base::VERSION = '0.08';
 }
 
 use strict;
@@ -9,6 +9,8 @@ use warnings;
 use Carp ();
 use Time::HiRes ();
 use Sys::Syslog ();
+
+our $USE_SYSLOG = 0;
 
 sub new {
     my ($class, $opt) = @_;
@@ -45,12 +47,14 @@ sub probe_failed {
         $info{time} = $elapsed;
     }
 
-    my $msg = sprintf "Probe %s failed, reason %s, elapsed: %3.2f s",
-        $name,
-        $info{reason} || 'unknown',
-        $info{time};
+    if ($USE_SYSLOG) {
+        my $msg = sprintf "Probe %s failed, reason %s, elapsed: %3.2f s",
+            $name,
+            $info{reason} || 'unknown',
+            $info{time};
 
-    Sys::Syslog::syslog('warning', $msg);
+        Sys::Syslog::syslog('warning', $msg);
+    }
 
     return { ok => 0, %info };
 }
@@ -67,9 +71,11 @@ sub probe_ok {
         $info{time} = $elapsed;
     }
 
-    my $msg = sprintf "Probe %s ok, elapsed: %3.2f s",
-        $name, $info{time};
-    Sys::Syslog::syslog('info', $msg);
+    if ($USE_SYSLOG) {
+        my $msg = sprintf "Probe %s ok, elapsed: %3.2f s",
+            $name, $info{time};
+        Sys::Syslog::syslog('info', $msg);
+    }
 
     return { ok => 1, %info };
 }
@@ -144,6 +150,7 @@ sub probe {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -152,7 +159,7 @@ Net::Prober::Probe::Base
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 AUTHOR
 
@@ -166,4 +173,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

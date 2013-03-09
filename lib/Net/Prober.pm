@@ -2,7 +2,7 @@
 
 package Net::Prober;
 {
-  $Net::Prober::VERSION = '0.07';
+  $Net::Prober::VERSION = '0.08';
 }
 
 
@@ -17,6 +17,8 @@ use IO::Socket::INET ();
 use LWPx::ParanoidAgent ();
 use Net::Ping ();
 use Time::HiRes ();
+
+use Net::Prober::Probe::Base ();
 
 
 sub port_name_to_num {
@@ -101,6 +103,7 @@ sub probe {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -109,7 +112,7 @@ Net::Prober - Probes network hosts for downtime, latency, etc...
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
@@ -179,6 +182,18 @@ matches a given regular expression, or has an exact md5 hash.
 =head1 NAME
 
 Net::Prober - Probes network hosts for downtime, latency, etc...
+
+=head1 LOGGING TO SYSLOG
+
+It is possible to enable automatic logging to syslog.
+It was in fact the default before version C<0.08>.
+
+To do that, include in your script:
+
+    use Net::Prober;
+    $Net::Prober::Probe::Base::USE_SYSLOG = 1;
+
+Not very pretty, I know.
 
 =head1 MOTIVATION
 
@@ -337,4 +352,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

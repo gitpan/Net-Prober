@@ -4,7 +4,7 @@
       "Cosimo Streppone <cosimo@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300005, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300016, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -52,6 +52,6 @@
          "web" : "http://github.com/cosimo/perl5-net-prober"
       }
    },
-   "version" : "0.07"
+   "version" : "0.08"
 }
 

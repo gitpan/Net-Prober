@@ -1,6 +1,6 @@
 package Test::Net::Prober::HTTPServer;
 {
-  $Test::Net::Prober::HTTPServer::VERSION = '0.07';
+  $Test::Net::Prober::HTTPServer::VERSION = '0.08';
 }
 
 use strict;
@@ -72,6 +72,7 @@ sub process {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -80,7 +81,7 @@ Test::Net::Prober::HTTPServer
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 AUTHOR
 
@@ -94,4 +95,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

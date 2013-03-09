@@ -1,6 +1,6 @@
 package Net::Prober::Probe::TCP;
 {
-  $Net::Prober::Probe::TCP::VERSION = '0.07';
+  $Net::Prober::Probe::TCP::VERSION = '0.08';
 }
 
 use strict;
@@ -56,6 +56,7 @@ sub open_socket {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -64,7 +65,7 @@ Net::Prober::Probe::TCP
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 AUTHOR
 
@@ -78,4 +79,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

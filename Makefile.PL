@@ -33,7 +33,7 @@ my %WriteMakefileArgs = (
     "Net::Ping" => "2.34",
     "Sys::Syslog" => 0
   },
-  "VERSION" => "0.07",
+  "VERSION" => "0.08",
   "test" => {
     "TESTS" => "t/*.t"
   }

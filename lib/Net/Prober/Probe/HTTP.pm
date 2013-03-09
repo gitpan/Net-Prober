@@ -1,6 +1,6 @@
 package Net::Prober::Probe::HTTP;
 {
-  $Net::Prober::Probe::HTTP::VERSION = '0.07';
+  $Net::Prober::Probe::HTTP::VERSION = '0.08';
 }
 
 use strict;
@@ -109,6 +109,7 @@ sub probe {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -117,7 +118,7 @@ Net::Prober::Probe::HTTP
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 AUTHOR
 
@@ -131,4 +132,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
