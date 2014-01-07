@@ -11,10 +11,7 @@ use ExtUtils::MakeMaker 6.30;
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Probes network hosts for downtime, latency, etc...",
   "AUTHOR" => "Cosimo Streppone <cosimo\@cpan.org>",
-  "BUILD_REQUIRES" => {
-    "LWP::Online" => 0,
-    "Test::More" => 0
-  },
+  "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -33,24 +30,36 @@ my %WriteMakefileArgs = (
     "Net::Ping" => "2.34",
     "Sys::Syslog" => 0
   },
-  "VERSION" => "0.08",
+  "TEST_REQUIRES" => {
+    "LWP::Online" => 0,
+    "Test::More" => 0
+  },
+  "VERSION" => "0.10",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
 
-unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
-  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
-  my $pp = $WriteMakefileArgs{PREREQ_PM};
-  for my $mod ( keys %$br ) {
-    if ( exists $pp->{$mod} ) {
-      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
-    }
-    else {
-      $pp->{$mod} = $br->{$mod};
-    }
-  }
+my %FallbackPrereqs = (
+  "Carp" => 0,
+  "Data::Dumper" => 0,
+  "Digest::MD5" => 0,
+  "IO::Socket::INET" => 0,
+  "IO::Socket::SSL" => 0,
+  "IO::Socket::UNIX" => 0,
+  "LWP::Online" => 0,
+  "LWPx::ParanoidAgent" => 0,
+  "Net::Ping" => "2.34",
+  "Sys::Syslog" => 0,
+  "Test::More" => 0
+);
+
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  delete $WriteMakefileArgs{TEST_REQUIRES};
+  delete $WriteMakefileArgs{BUILD_REQUIRES};
+  $WriteMakefileArgs{PREREQ_PM} = \%FallbackPrereqs;
 }
 
 delete $WriteMakefileArgs{CONFIGURE_REQUIRES}

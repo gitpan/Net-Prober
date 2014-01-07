@@ -21,6 +21,7 @@ lib/Net/Prober/tcp.pm
 lib/Test/Net/Prober/HTTPServer.pm
 t/00-use.t
 t/http.t
+t/http_post.t
 t/icmp.t
 t/imap.t
 t/port-names.t
