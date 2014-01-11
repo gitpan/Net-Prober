@@ -1,6 +1,6 @@
 package Net::Prober::ssh;
 {
-  $Net::Prober::ssh::VERSION = '0.10';
+  $Net::Prober::ssh::VERSION = '0.11';
 }
 
 use strict;
@@ -100,7 +100,7 @@ Net::Prober::ssh
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 AUTHOR
 

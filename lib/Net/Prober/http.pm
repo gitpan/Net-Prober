@@ -1,6 +1,6 @@
 package Net::Prober::http;
 {
-  $Net::Prober::http::VERSION = '0.10';
+  $Net::Prober::http::VERSION = '0.11';
 }
 
 use strict;
@@ -19,7 +19,7 @@ Net::Prober::http
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 AUTHOR
 

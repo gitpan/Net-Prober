@@ -1,6 +1,6 @@
 package Test::Net::Prober::HTTPServer;
 {
-  $Test::Net::Prober::HTTPServer::VERSION = '0.10';
+  $Test::Net::Prober::HTTPServer::VERSION = '0.11';
 }
 
 use strict;
@@ -83,7 +83,7 @@ Test::Net::Prober::HTTPServer
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 AUTHOR
 

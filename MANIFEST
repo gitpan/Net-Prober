@@ -25,6 +25,7 @@ t/http_post.t
 t/icmp.t
 t/imap.t
 t/port-names.t
+t/sd.pl
 t/smtp.t
 t/ssh.t
 t/tcp.t
