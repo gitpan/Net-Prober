@@ -20,6 +20,7 @@ lib/Net/Prober/ssh.pm
 lib/Net/Prober/tcp.pm
 lib/Test/Net/Prober/HTTPServer.pm
 t/00-use.t
+t/downloads.pl
 t/http.t
 t/http_post.t
 t/icmp.t
