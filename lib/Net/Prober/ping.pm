@@ -1,6 +1,6 @@
 package Net::Prober::ping;
 {
-  $Net::Prober::ping::VERSION = '0.12';
+  $Net::Prober::ping::VERSION = '0.13';
 }
 
 use strict;
@@ -64,7 +64,7 @@ Net::Prober::ping
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 AUTHOR
 
