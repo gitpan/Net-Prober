@@ -1,6 +1,6 @@
 package Net::Prober::Probe::Base;
 {
-  $Net::Prober::Probe::Base::VERSION = '0.13';
+  $Net::Prober::Probe::Base::VERSION = '0.14';
 }
 
 use strict;
@@ -161,7 +161,7 @@ Net::Prober::Probe::Base
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 AUTHOR
 

@@ -28,4 +28,4 @@ requires:
 resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Net-Prober
   repository: git://github.com/cosimo/perl5-net-prober.git
-version: 0.13
+version: 0.14
